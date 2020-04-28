@@ -110,13 +110,13 @@ RUN git clone https://github.com/darkbitio/mkit-ui.git && \
     yarn install
 
 # Profile versions
-ARG K8SPROFILE=0.1.2
+ARG K8SPROFILE=1.0
 ARG GKEPROFILE=0.1.2
 ARG AKSPROFILE=0.1.3
 ARG EKSPROFILE=0.1.4
 
 # Profiles
-RUN wget -O inspec-profile-k8s.zip https://github.com/darkbitio/inspec-profile-k8s/archive/${K8SPROFILE}.zip && \
+RUN wget -O inspec-profile-k8s.zip https://github.com/ArunaLakmal/inspec-profile-k8s/archive/${K8SPROFILE}.zip && \
     unzip inspec-profile-k8s.zip -d /home/${RUNUSER}/${PROFILEDIR} && \
     mv /home/${RUNUSER}/${PROFILEDIR}/inspec-profile-k8s-${K8SPROFILE} /home/${RUNUSER}/${PROFILEDIR}/inspec-profile-k8s && \
     rm inspec-profile-k8s.zip && \
