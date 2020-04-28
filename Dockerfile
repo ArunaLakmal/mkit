@@ -110,7 +110,7 @@ RUN git clone https://github.com/darkbitio/mkit-ui.git && \
     yarn install
 
 # Profile versions
-ARG K8SPROFILE=1.1
+ARG K8SPROFILE=0.13
 ARG GKEPROFILE=0.1.2
 ARG AKSPROFILE=0.1.3
 ARG EKSPROFILE=0.1.4
