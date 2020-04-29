@@ -113,7 +113,7 @@ RUN git clone https://github.com/darkbitio/mkit-ui.git && \
 ARG K8SPROFILE=0.1.2
 ARG GKEPROFILE=0.1.2
 ARG AKSPROFILE=0.1.3
-ARG EKSPROFILE=0.1.4
+ARG EKSPROFILE=0.1.5
 
 # Profiles
 RUN wget -O inspec-profile-k8s.zip https://github.com/darkbitio/inspec-profile-k8s/archive/${K8SPROFILE}.zip && \
@@ -128,7 +128,7 @@ RUN wget -O inspec-profile-k8s.zip https://github.com/darkbitio/inspec-profile-k
     unzip inspec-profile-aks.zip -d /home/${RUNUSER}/${PROFILEDIR} && \
     mv /home/${RUNUSER}/${PROFILEDIR}/inspec-profile-aks-${AKSPROFILE} /home/${RUNUSER}/${PROFILEDIR}/inspec-profile-aks && \
     rm inspec-profile-aks.zip && \
-    wget -O inspec-profile-eks.zip https://github.com/darkbitio/inspec-profile-eks/archive/${EKSPROFILE}.zip && \
+    wget -O inspec-profile-eks.zip https://github.com/ArunaLakmal/inspec-profile-eks/archive/${EKSPROFILE}.zip && \
     unzip inspec-profile-eks.zip -d /home/${RUNUSER}/${PROFILEDIR} && \
     mv /home/${RUNUSER}/${PROFILEDIR}/inspec-profile-eks-${EKSPROFILE} /home/${RUNUSER}/${PROFILEDIR}/inspec-profile-eks && \
     rm inspec-profile-eks.zip
