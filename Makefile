@@ -91,6 +91,7 @@ run-aks:
 run-eks:
 	$(call NDEF,awsregion)
 	$(call NDEF,clustername)
+	$(call NDEF,bucketname)
 	@echo "Running in $(IMAGEREPO):latest: $(WORKDIR)/$(CHECKEKS)"
 	@$(EKSINSPECRUN) || exit 0
 
