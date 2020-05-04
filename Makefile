@@ -56,7 +56,7 @@ EKSCOMMAND=$(COMMAND) \
   -e AWS_SESSION_TOKEN \
   -e AWS_SECURITY_TOKEN \
   -e AWS_SESSION_EXPIRATION
-EKSINSPECRUN=$(EKSCOMMAND) --entrypoint $(WORKDIR)/$(CHECKEKS) $(IMAGEPATH) "$(awsregion)" "$(clustername)"
+EKSINSPECRUN=$(EKSCOMMAND) --entrypoint $(WORKDIR)/$(CHECKEKS) $(IMAGEPATH) "$(awsregion)" "$(clustername)" "$(bucketname)"
 
 K8SDEVMOUNT=-v $(LOCALDIR)/inspec-profile-k8s:$(HOMEDIR)/profiles/inspec-profile-k8s
 K8SKUBECONFIG=$(or ${KUBECONFIG},${KUBECONFIG},$(HOME)/.kube/config)
@@ -91,6 +91,7 @@ run-aks:
 run-eks:
 	$(call NDEF,awsregion)
 	$(call NDEF,clustername)
+	$(call NDEF,bucketname)
 	@echo "Running in $(IMAGEREPO):latest: $(WORKDIR)/$(CHECKEKS)"
 	@$(EKSINSPECRUN) || exit 0
 
