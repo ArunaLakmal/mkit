@@ -55,8 +55,7 @@ EKSCOMMAND=$(COMMAND) \
   -e AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN \
   -e AWS_SECURITY_TOKEN \
-  -e AWS_SESSION_EXPIRATION \
-  -e AWS_DEFAULT_REGION
+  -e AWS_SESSION_EXPIRATION
 EKSINSPECRUN=$(EKSCOMMAND) --entrypoint $(WORKDIR)/$(CHECKEKS) $(IMAGEPATH) "$(awsregion)" "$(clustername)" "$(bucketname)"
 
 K8SDEVMOUNT=-v $(LOCALDIR)/inspec-profile-k8s:$(HOMEDIR)/profiles/inspec-profile-k8s
