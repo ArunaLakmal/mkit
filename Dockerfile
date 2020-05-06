@@ -78,9 +78,6 @@ RUN gem install --user-install --no-document --source ${GEM_SOURCE} --version ${
     cinc-auditor plugin install train-kubernetes && \
     sed -ie 's#"= 0#"0#g' /home/${RUNUSER}/.inspec/plugins.json
 
-#Install chef inspec
-RUN curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
-
 # GCP cli
 RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip -O google-cloud-sdk.zip && \
     unzip google-cloud-sdk.zip && \
