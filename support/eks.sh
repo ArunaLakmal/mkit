@@ -24,7 +24,6 @@ touch "${OUTPUT_PATH}"
 
 # Run the GCP/GKE profile for cloud resources
 echo -n "Generating results..."
-aws s3 ls
 cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-eks" -t aws:// --input awsregion="${awsregion}" clustername="${clustername}" bucketname="${bucketname}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}" || exit 1
 echo "done."
 
