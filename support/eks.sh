@@ -21,7 +21,7 @@ bucketname="${3}"
 PROFILE_BASE_PATH="../profiles"
 OUTPUT_PATH="${HOME}/raw-results.json"
 touch "${OUTPUT_PATH}"
-
+aws configure set default.region us-east-1
 # Run the GCP/GKE profile for cloud resources
 echo -n "Generating results..."
 cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-eks" -t aws:// --input awsregion="${awsregion}" clustername="${clustername}" bucketname="${bucketname}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}" || exit 1
