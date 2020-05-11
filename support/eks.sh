@@ -18,7 +18,6 @@ awsregion="${1}"
 clustername="${2}"
 bucketname="${3}"
 
-aws configure set default.region us-east-1
 PROFILE_BASE_PATH="../profiles"
 OUTPUT_PATH="${HOME}/raw-results.json"
 touch "${OUTPUT_PATH}"
