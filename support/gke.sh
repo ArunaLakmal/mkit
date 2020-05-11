@@ -18,7 +18,7 @@ project_id="${1}"
 location="${2}"
 clustername="${3}"
 
-source region.sh
+
 PROFILE_BASE_PATH="../profiles"
 export PATH="/home/node/google-cloud-sdk/bin:$PATH"
 OUTPUT_PATH="${HOME}/raw-results.json"
