@@ -27,7 +27,7 @@ ARG YARN_GPG_KEY="6A010C5166006599AA17F08146C2130DFD2497F5"
 ENV NODE_VERSION 12.16.1
 ENV YARN_VERSION 1.22.0
 ENV NODE_ENV=production
-ENV AWS_DEFAULT_REGION=us-east-1
+#ENV AWS_DEFAULT_REGION=us-east-1
 
 # Deps
 RUN apk add --update build-base gcc musl-dev openssl-dev libstdc++ libxml2-dev libffi-dev bash gnupg tar git openssh-client python3-dev python3 py3-pip curl jq && \
